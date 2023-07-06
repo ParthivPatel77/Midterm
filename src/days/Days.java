@@ -4,6 +4,7 @@
  */
 package days;
 
+import days.Weekdays.Day;
 import java.util.Scanner;
 
 /**This class takes String input from user 
@@ -18,17 +19,24 @@ import java.util.Scanner;
  */
 public class Days {
 
+   
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
          
     Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
+    System.out.println("Enter the day number ");
+    int code = in.nextInt();
+    if(code<1 || code>7){
+        System.out.println("Invalid input, Please Enter again\n");
+    }
+    else{
     Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
+    Day x = Day.values()[code-1];
+    t.nameOfDay(x); 
     }// TODO code application logic here
-    
+    }
     
 }

@@ -10,34 +10,28 @@ package days;
  */
 public class Weekdays 
 {
-  public void nameOfDay(String code)
-     {
-    switch(code.toUpperCase())
-      {
-      case "ONE":
-        System.out.println("Monday");
-        break;
-      case "TWO":
-        System.out.println("Tuesday");
-        break;
-      case "THREE":
-        System.out.println("Wednesday");
-        break;
-      case "FOUR":
-        System.out.println("Thursday");
-        break;
-      case "FIVE":
-        System.out.println("Friday");
-        break;
-      case "SIX":
-        System.out.println("Saturday");
-        break;
-      case "SEVEN":
-        System.out.println("Sunday");
-        break;
+   public enum Day {
+    ONE("Monday"),TWO("Tuesday"),THREE("Wednesday"),FOUR("Thursday"),FIVE("Friday"),SIX("Saturday"),SEVEN("Sunday");
+
+    final String str;
+
+    Day(String str) {
+        this.str = str;
     }
+
+    public String getName() {
+        return str;
+    }
+   }
+   
+   
+    public void nameOfDay(Day day) {
+        String str = day.getName();
+        System.out.println(str);
+    }
+}
   
-}
-}
+
+
 
 
